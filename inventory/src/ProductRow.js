@@ -3,12 +3,21 @@ import './App.css';
 
 class ProductRow extends Component {
     render() {
-        return (
-            <div>
+        const product = this.props.product;
+        const name = product.stocked ?
+            product.name :
+            <span style={{color: 'red'}}>
+        {product.name}
+      </span>;
 
-            </div>
+        return (
+            <tr>
+                <td>{name}</td>
+                <td>{product.price}</td>
+            </tr>
         );
     }
 }
+
 
 export default ProductRow;
