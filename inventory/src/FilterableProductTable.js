@@ -39,7 +39,7 @@ class FilterableProductTable extends Component {
 
 
 
-                <ProductTable/>
+
             </div>
         );
     }
