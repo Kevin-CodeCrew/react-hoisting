@@ -16,17 +16,29 @@ class FilterableProductTable extends Component {
 
     handleFilterTextChange(filterText) {
         this.setState({filterText: filterText});
+        console.log("Filtered Text Event: " + this.state.filterText);
     }
 
     handleInStockChange(inStockOnly) {
         this.setState({inStockOnly: inStockOnly});
+        console.log("In stock Event: " + this.state.inStockOnly);
     }
 
 
     render() {
         return (
             <div>
-                <SearchBar/>
+                <SearchBar
+                    filterText={this.state.filterText}
+                    inStockOnly={this.state.inStockOnly}
+                    onFilterTextChange={this.handleFilterTextChange}
+                    onInStockChange = {this.handleInStockChange}
+
+                />
+
+
+
+
                 <ProductTable/>
             </div>
         );
